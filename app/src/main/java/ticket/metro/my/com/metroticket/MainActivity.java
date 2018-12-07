@@ -2,6 +2,13 @@ package ticket.metro.my.com.metroticket;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,10 +20,23 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class ticket extends AppCompatActivity {
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
+public class MainActivity extends AppCompatActivity {
     public static Spinner spinner, spinner2,spinner11,spinner22;
-    public static RadioGroup  radioGroup3;
+    public static RadioGroup radioGroup3;
     public static RadioButton full_ticket, Half_ticket;
     public static TextView number, pricetext, textView9, tahwel;
     public static LinearLayout ticket;
@@ -26,12 +46,26 @@ public class ticket extends AppCompatActivity {
     public static int get_position2;
     private long prssback;
     private Toast backToast;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ticket);
+        setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(MainActivity.this,map_metro.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
         spinner = findViewById(R.id.spinner);
         spinner2 = findViewById(R.id.spinner2);
         spinner11 = findViewById(R.id.spinner11);
@@ -2541,11 +2575,7 @@ public class ticket extends AppCompatActivity {
                 break;
         }
     }
-    public void map(View view) {
-        Intent intent =new Intent(ticket.this,map_metro.class);
-        startActivity(intent);
 
-    }
 
     public void get_ticket(View view) {
         Intent intent =new Intent(this,get_ticket.class);

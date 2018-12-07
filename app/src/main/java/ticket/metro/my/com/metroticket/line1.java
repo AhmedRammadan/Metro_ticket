@@ -298,7 +298,7 @@ public class line1 {
 
     public static int getResualt2(){
 
-        if (ticket.get_position1==0){
+        if (MainActivity.get_position1==0){
             if (stpStart <= 20) {
                 tahwel = "a";
                 if (stpStart > 19) {
@@ -318,8 +318,8 @@ public class line1 {
                     resualt2 = (22 - stpStart) + stpEnd;
                 }
             }
-        }else if (ticket.get_position1==1){
-            if (ticket.get_position2==0){
+        }else if (MainActivity.get_position1==1){
+            if (MainActivity.get_position2==0){
                 if (stpStart<=11){
                     tahwel = "a";
                     if (stpStart<10){
@@ -341,7 +341,7 @@ public class line1 {
                         resualt2=13-stpStart+stpEnd;
                     }
                 }
-            }if (ticket.get_position2==2){
+            }if (MainActivity.get_position2==2){
                 tahwel = "aaa";
                 if (stpStart>12)
                     resualt2=stpStart-12+stpEnd;
@@ -350,14 +350,14 @@ public class line1 {
                 else if (stpStart==12)
                     resualt2=getstart();
             }
-        }else if (ticket.get_position1==2){
-            if (ticket.get_position2==1){
+        }else if (MainActivity.get_position1==2){
+            if (MainActivity.get_position2==1){
                 tahwel = "aaa";
                 resualt2=stpEnd+stpStart-1;
-            }else if (ticket.get_position2==0){
-                if (ticket.tahwel_2==1)
+            }else if (MainActivity.get_position2==0){
+                if (MainActivity.tahwel_2==1)
                     tahwel = "a";
-                else if (ticket.tahwel_2==2)
+                else if (MainActivity.tahwel_2==2)
                     tahwel = "aa";
                 resualt2=stpEnd+stpStart-1;
             }

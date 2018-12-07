@@ -6,14 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".map_metro"
     android:background="#7C1D90"
-    android:orientation="vertical"
-    android:weightSum="2">
+    android:orientation="vertical">
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/photo_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
-
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-5919356622462995/4387135715">
+    </com.google.android.gms.ads.AdView>
 
 </LinearLayout>
